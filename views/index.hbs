@@ -1,2 +1,12 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
+
+<p>The library has the following record counts:</p>
+
+<ul>
+    <li> Books: {{ data.book_count }} </li>
+    <li> Copies: {{ data.book_instance_count }} </li>
+    <li> Copies Available: {{ data.book_instance_available_count }} </li>
+    <li> Authors: {{ data.author_count }} </li>
+    <li> Genres: {{ data.genre_count }} </li>
+</ul>

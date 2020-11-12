@@ -3,6 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const Handlebars = require('handlebars');
+var hbs = require('express-handlebars');
+const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -17,6 +20,7 @@ var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 // view engine setup
+app.engine('hbs', hbs({extname: 'hbs', defaultLayout: 'layout', handlebars: allowInsecurePrototypeAccess(Handlebars), layoutsDir: __dirname + '/views/layouts/'}));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
