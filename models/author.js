@@ -33,11 +33,17 @@ AuthorSchema
     })
 
 AuthorSchema
-    .virtual('dat_of_death_formatted')
+    .virtual('date_of_death_formatted')
     .get(function() {
         return this.date_of_death ?
             DateTime.fromJSDate(this.date_of_death).toLocaleString(DateTime.DATE_MED) :
             '';
+    })
+
+AuthorSchema
+    .virtual('lifespan_formatted')
+    .get(function() {
+        return this.date_of_birth_formatted + ' - ' + this.date_of_death_formatted
     })
 
 // Virtual for author's URL

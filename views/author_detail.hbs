@@ -1,0 +1,15 @@
+<h1> Author: {{ author.name }} </h1>
+<p> {{author.lifespan_formatted}} </p>
+
+<h4>Books</h4>
+
+<dl>
+    {{#each author_books}}
+        <dt>
+            <a href={{ this.url }}> {{this.title}} </a>
+        </dt>
+        <dd>
+            {{ this.summary }}
+        </dd>
+    {{/each}}
+</dl>
