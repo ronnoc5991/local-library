@@ -1,0 +1,17 @@
+<h1> {{ title }} </h1>
+
+<form action="" method="POST">
+    <div class="form-group">
+        <label for="first_name"> First Name:</label>
+        <input type="text" name='first_name' placeholder="First Name (Christian)" required='true' value={{ author.first_name }}>
+        <label for="family_name">Family Name:</label>
+        <input type="text" name='family_name' placeholder="Family Name (surname)" required='true' value={{ author.family_name }}>
+    </div>
+    <div class="form-group">
+        <label for="date_of_birth">Date of Birth:</label>
+        <input type="date" name="date_of_birth" value={{ author.date_of_birth }}>
+        <label for="date_of_death">Date of Death:</label>
+        <input type="date" name="date_of_death" value={{ author.date_of_death }}>
+    </div>
+    <button type="submit">Submit</button>
+</form>
