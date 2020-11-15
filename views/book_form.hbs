@@ -1,0 +1,32 @@
+<h1> {{ title }} </h1>
+
+<form action="" method="POST">
+    <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" name="title" placeholder="Name of book" required="true" value={{ book.title }}>
+    </div>
+    <div class="form-group">
+        <label for="author">Author</label>
+        <input type="select" placeholder="Select author" name="author" required="true">
+    </div>
+    <div class="form-group">
+        <label for="summary">Summary</label>
+        <input type="textarea" placeholder="Summary" name="summary" required="true" >
+    </div>
+    <div class="form-group">
+        <label for="isbn">ISBN</label>
+        <input type="text" placeholder="ISBN13" name="isbn" value={{ book.isbn }}>
+    </div>
+    <div class="form-group">
+        <label for="genre">Genre</label>
+        <div>
+            {{#each genres}}
+                <div>
+                    <input type="checkbox" name="genre" id={{this._id}} value={{this._id}} checked={{genre.checked}}>
+                    <label for={{this._id}}> {{ this.name }} </label>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+    <button type="submit">Submit</button>
+</form>

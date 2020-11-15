@@ -1,0 +1,12 @@
+<h1> {{ title }}: {{ author.name }} </h1>
+
+<p> {{ author.lifespan_formatted }} </p>
+
+<p>Do you really want to delete this Author?</p>
+
+<form action="" method="POST">
+    <div class="form-group">
+        <input type="hidden" name='authorid' required='true' value={{ author._id }}>
+    </div>
+    <button type="submit">Delete</button>
+</form>
